@@ -1,6 +1,6 @@
 {
   "name": "easy-ms",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Easy and human friendly millisecond implementation that you will love it",
   "main": "index.js",
   "scripts": {
