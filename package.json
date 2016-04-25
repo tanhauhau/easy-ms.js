@@ -1,16 +1,30 @@
 {
-    "name": "easy-ms",
-    "version": "0.0.0",
-    "description": "Easy and human friendly millisecond implementation that you will love it",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "ms",
-        "millisecond",
-        "time"
-    ],
-    "author": "Tan Li Hau <lhtan93@gmail.com>",
-    "license": "MIT"
+  "name": "easy-ms",
+  "version": "0.0.0",
+  "description": "Easy and human friendly millisecond implementation that you will love it",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec/"
+  },
+  "keywords": [
+    "ms",
+    "millisecond",
+    "time"
+  ],
+  "author": "Tan Li Hau <lhtan93@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ms": "^0.7.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanhauhau/easy-ms.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tanhauhau/easy-ms.js/issues"
+  },
+  "homepage": "https://github.com/tanhauhau/easy-ms.js#readme"
 }
