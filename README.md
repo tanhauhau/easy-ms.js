@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tanhauhau/easy-ms.js.svg?branch=master)](https://travis-ci.org/tanhauhau/easy-ms.js)
 [![npm version](https://badge.fury.io/js/easy-ms.svg)](https://badge.fury.io/js/easy-ms)
-[![Dependency status](https://david-dm.org/tanhauhau/easy-ms.svg)](https://david-dm.org)
+[![Dependency status](https://david-dm.org/tanhauhau/easy-ms.js.svg)](https://david-dm.org)
 [![Downloads](https://img.shields.io/npm/dt/easy-ms.svg)](https://www.npmjs.com/package/easy-ms)
 [![Donate](https://img.shields.io/gratipay/user/tanhauhau.svg)](https://gratipay.com/~tanhauhau/)
 
@@ -77,6 +77,45 @@ ms('1m').second('abc')
 ms('1b').hour(5)
 ms({m: 'foo'})
 ```
+
+# Inspiration
+Inspired by [ms](https://www.npmjs.com/package/ms) and [to-ms](https://www.npmjs.com/package/to-ms). 
+
+But do more than both combined.
+
+# Caveat
+The value returned by the function `ms(...)` is monkey patched Number. It might created some unwanted behaviors.
+
+```javascript
+var ms = require('easy-ms');
+var val = ms(1000); //1000 millisecond
+
+//It is not strictly equal
+val == 1000; //return true
+val === 1000; //return false
+
+//To circumvent this, use Number(...)
+Number(val) === 1000; //return true;
+(val + 0) === 1000;	 //return true, but not recommended
+
+//It might print more than you expected in console.log
+console.log(a);
+/*
+return 
+{ [Number: 1000]
+  year: [Function: bound addTime],
+  yrs: [Function: bound addTime],
+  yr: [Function: bound addTime],
+  ...
+*/
+console.log(Number(100));
+//return 1000
+
+//It works fine in strings
+str = 'wait for ' + val; // 'wait for 1000'
+str = `wait for ${val}`; // 'wait for 1000'
+```
+
 
 # License
 MIT
